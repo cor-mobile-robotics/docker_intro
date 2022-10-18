@@ -27,3 +27,7 @@ docker run -it <image_id> bash
 To open more terminals connected to the same container
 ```
 docker exec -it <container_id> bash
+
+
+# interesting
+https://docs.ros.org/en/crystal/Tutorials/Run-2-nodes-in-two-separate-docker-containers.html
