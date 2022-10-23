@@ -1,5 +1,12 @@
 # Docker-intro
 
+
+# Hardware acceleration
+In our case we use nvidia graphics cards. Others are explained in 
+
+
+# running docker
+
 docker run -it --rm
 
 -it means start interactive shell after container is build
@@ -31,3 +38,11 @@ docker exec -it <container_id> bash
 
 # interesting
 https://docs.ros.org/en/crystal/Tutorials/Run-2-nodes-in-two-separate-docker-containers.html
+
+
+## getting full gpu control
+
+run for nvidia 
+```
+sudo apt-get install cuda-drivers
+```
