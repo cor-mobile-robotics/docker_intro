@@ -1,8 +1,16 @@
 # Docker-intro
 
 
-# Hardware acceleration
-In our case we use nvidia graphics cards. Others are explained in 
+
+
+$ docker ps
+$ docker ps -a
+$ docker image ls
+$ docker info
+$ docker start <name>
+$ docker exec -it <name> bash
+$ docker stop <name>
+$ docker container rm <name>
 
 
 # running docker
@@ -39,6 +47,8 @@ docker exec -it <container_id> bash
 # interesting
 https://docs.ros.org/en/crystal/Tutorials/Run-2-nodes-in-two-separate-docker-containers.html
 
+# Hardware acceleration
+In our case we use nvidia graphics cards. Others are explained in 
 
 ## getting full gpu control
 
