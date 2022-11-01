@@ -56,3 +56,18 @@ run for nvidia
 ```
 sudo apt-get install cuda-drivers
 ```
+
+
+
+# Jetson
+
+there is a problem where you cant run a privileged container on the jetson platform (error seen with jetpack 5)
+to overcome this problem and run privileged container go to,
+```
+sudo nano /etc/nvidia-container-runtime/host-files-for-container.d/l4t.csv
+```
+and comment out
+```
+dev, /dev/nvhost-as-gpu
+```
+uncomment when you are not going to run privileged containers
