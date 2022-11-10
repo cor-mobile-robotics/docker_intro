@@ -3,71 +3,47 @@
 
 
 
-$ docker ps
-$ docker ps -a
-$ docker image ls
-$ docker info
-$ docker start <name>
-$ docker exec -it <name> bash
-$ docker stop <name>
-$ docker container rm <name>
-
-
-# running docker
-
-docker run -it --rm
-
--it means start interactive shell after container is build
---rm remove the container afterwards, so it is not left on your system
-
-bash added at end of docker run means that bash terminal is opened in the container
+This repository gives an indepth explanaition in how to use docker 
 
 
 
 
-error in VS code connect error
-terminal paste:
-- sudo groupadd docker
-- sudo usermod -aG docker $USER
-
-then restart
 
 
 
-# multiple terminals to same container
-to start the docker container
+
+## Installation
+
+
+If docker is already installed and you can do,
 ```
-docker run -it <image_id> bash
+docker ps
 ```
-To open more terminals connected to the same container
+without getting an permission error, you can skip the following steps.
+
+To install docker:
 ```
-docker exec -it <container_id> bash
+
+```
+And then to give superuser priviliges to docker:
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+Where you have to change $USER to your own user name. Now restart and check if the permission warning is gone.
+
+
+
+
+
+
+
 
 
 # interesting
 https://docs.ros.org/en/crystal/Tutorials/Run-2-nodes-in-two-separate-docker-containers.html
 
-# Hardware acceleration
-In our case we use nvidia graphics cards. Others are explained in 
-
-## getting full gpu control
-
-run for nvidia 
-```
-sudo apt-get install cuda-drivers
-```
 
 
 
-# Jetson
 
-there is a problem where you cant run a privileged container on the jetson platform (error seen with jetpack 5)
-to overcome this problem and run privileged container go to,
-```
-sudo nano /etc/nvidia-container-runtime/host-files-for-container.d/l4t.csv
-```
-and comment out
-```
-dev, /dev/nvhost-as-gpu
-```
-uncomment when you are not going to run privileged containers
