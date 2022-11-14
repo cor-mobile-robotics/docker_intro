@@ -14,7 +14,37 @@ ___
 # 3. Management of docker images and running containers
 
 
+To check al existing images stored
+```
+docker images
+```
+this will show all base images, layers and final images that are tagged by a name
 
+TO DO: example images
+
+To clear all not used layers
+```
+docker rmi --force $(docker images -f "dangling=true" -q)
+```
+
+To remove specific layers or images
+```
+docker rmi --force <IMAGE ID>
+```
+where IMAGE ID can be retrieved using 
+```
+docker images
+```
+
+
+
+
+
+
+To reset and remove unwanted occupied space by docker
+```
+docker system prune
+```
 
 
 
