@@ -32,7 +32,11 @@ sudo apt-get update
 sudo apt-get install nvidia-container-runtime
 ```
 
-
+now restart docker
+```
+sudo systemctl stop docker
+sudo systemctl start docker
+```
 
 
 
