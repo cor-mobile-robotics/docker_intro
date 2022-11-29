@@ -12,6 +12,7 @@ ___
 
 # 1. Starting with Docker
 
+```
 docker ps
 docker ps -a
 docker image ls
@@ -20,6 +21,16 @@ docker start <name>
 docker exec -it <name> bash
 docker stop <name>
 docker container rm <name> 
+```
+
+
+
+## Build commands
+
+
+
+## Run commands
+
 
 
 
