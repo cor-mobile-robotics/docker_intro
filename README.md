@@ -1,3 +1,10 @@
+<!-- markdown-link-check-disable -->
+
+[![link_check](https://github.com/R2CLab/docker_intro/actions/workflows/link_checker.yml/badge.svg)](https://github.com/R2CLab/docker_intro/actions/workflows/link_checker.yml)
+
+<!-- markdown-link-check-enable -->
+
+
 # Docker-intro
 
 
