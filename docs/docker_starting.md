@@ -12,6 +12,9 @@ ___
 
 # 1. Starting with Docker
 
+
+
+
 ```
 docker ps
 docker ps -a

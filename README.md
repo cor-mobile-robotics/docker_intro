@@ -8,8 +8,6 @@
 # Docker-intro
 
 
-
-
 This repository gives an indepth explanaition in how to use Docker. With Docker you can containerize applications and can include everything to build and run this application in an isolated environment. This gives the possibility to easily install dependencies without changing the file system of the host. It makes it also highly portable, since this isolated environment can be started on any machine with the same architecture (example, amd or arm). And you can just restart the container when something goes wrong.
 
 
