@@ -13,47 +13,34 @@
 ___
 
 # 5. GPU acceleration inside docker
-In our case we use nvidia graphics cards. Others are explained in 
+In this tutorial we use a NVIDIA graphics card for GPU acceleration inside Docker containers. There is a possibility that this tutorial is going to be extended to other manufactures, but for now it is only NVIDIA based.
 
-## getting full gpu control
 
-run for nvidia 
+>Note: You should already have the NVIDIA CUDA toolkit installed and should be able to run the command `nvidia-smi`, which displays your gpu driver version and CUDA version.
+
+First we need to setup the GPG key from the package repository for the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 ```
-sudo apt-get install cuda-drivers
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
-
-
+Now the package listing can be updated and the NVIDIA Container Toolkit can be installed,
 ```
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | sudo apt-key add -
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list |\
-sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
 sudo apt-get update
-sudo apt-get install nvidia-container-runtime
+sudo apt-get install -y nvidia-docker2
 ```
 
-now restart docker
+Restart Docker to complete the installation
 ```
-sudo systemctl stop docker
-sudo systemctl start docker
+sudo systemctl restart docker
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Now you should be able to run and build containers with CUDA available. This can be tested using an example CUDA base container,
+```
+sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
+```
 
 ___
 
