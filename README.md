@@ -43,11 +43,11 @@ And then to give superuser priviliges to docker:
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
-Where you have to change $USER to your own user name. Now restart your machine and check if the permission warning is gone when you run,
+Now restart your machine and check if the permission warning is gone when you run,
 ```
 docker ps
 ```
-
+Sometimes you have to specify the $USER variable on your own in case this didn't work. So remove the variable and change it to your computer name.
 
 ## Tutorials
 
