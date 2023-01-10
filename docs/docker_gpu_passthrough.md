@@ -26,6 +26,10 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
             sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
             sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
+
+>Note: Check the lines that are printed and if it has the correct ubuntu version that is installed, there is a small change that it is wrong. The `apt-get update` won't work if it added the list for the wrong distribution. Use `sudo nano /etc/apt/sources.list.d/nvidia-container-toolkit.list` to change it to the correct distribution.
+
+
 Now the package listing can be updated and the NVIDIA Container Toolkit can be installed,
 ```
 sudo apt-get update
