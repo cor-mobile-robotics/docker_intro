@@ -39,7 +39,7 @@ sudo systemctl restart docker
 
 Now you should be able to run and build containers with CUDA available. This can be tested using an example CUDA base container,
 ```
-sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
+docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 ```
 
 ___
