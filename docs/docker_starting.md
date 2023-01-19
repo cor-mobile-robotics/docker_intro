@@ -53,7 +53,7 @@ an error is given since the roscore runs in the protective environment of the co
 
 
 
-__
+___
 
 That is all to quickly start with Docker, for more information on docker see below for the next step.
 
