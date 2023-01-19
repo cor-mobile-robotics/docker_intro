@@ -18,7 +18,7 @@ To check al existing images stored
 ```
 docker images
 ```
-this will show all base images, layers and final images that are tagged by a name
+this will show all base images, layers and final images that are tagged by a name.
 
 TO DO: example images
 
@@ -52,6 +52,24 @@ docker system prune
 
 
 
+```
+docker ps
+docker ps -a
+docker image ls
+docker info
+docker start <name>
+dockerdocker exec -it <name> bash
+ stop <name>
+docker container rm <name> 
+```
+
+
+
+## Build commands
+
+
+
+## Run commands
 
 
 
